@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+} 
+
+model LeituraTemperatura {
+  id          String   @id @default(uuid())
+  temperatura Float
+  tipoOrigem  String   @default("AO_VIVO") // "AO_VIVO" ou "HISTORICO"
+  timestamp   DateTime @default(now())
+  criadoEm    DateTime @default(now())
+
+  @@map("leituras_temperatura")
+}

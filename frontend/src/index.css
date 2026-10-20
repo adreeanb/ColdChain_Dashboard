@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Define a cor de fundo do Dashboard */
+body {
+  background-color: #f3f4f6;
+}

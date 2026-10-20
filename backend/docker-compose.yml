@@ -1,0 +1,20 @@
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: meu-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: senha_local_123
+      POSTGRES_DB: TCC_ColdChain_db
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
